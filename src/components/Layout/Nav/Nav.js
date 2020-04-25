@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import DrawItem from './DrawItem/DrawItem'
 import { menCategories, womenCategories } from "./categories";
 import './Nav.css'
+import logo from '../../../assets/images/logo.png'
 
 const Nav = () => {
     // state for handling appearing/disappearing of men/female sections in desktop navigation
@@ -33,7 +34,6 @@ const Nav = () => {
                     ...appearingItems,
                     women: true
                 })
-                break
                 break
             default: return
         }
@@ -86,23 +86,25 @@ const Nav = () => {
     })
 
     return (
-        <nav className="desktop-nav">
-            <div className="left">
-                <div className="logo" />
-                <ul className="links">
-                    {links}
-                </ul>
-            </div>
-            <div className="right">
-                <button className="login-btn"><i className="far fa-user" /> Login</button>
-                <div className="vertical-divide" />
-                <div className="cart-icon">
-                    <i className="fas fa-shopping-bag" />
-                    <div className="products-amount"><p>5</p></div>
+        <header>
+            <nav className="desktop-nav">
+                <div className="left">
+                    <img src={logo} alt="" className="logo"/>
+                    <ul className="links">
+                        {links}
+                    </ul>
                 </div>
-                <div className="search-icon"><i className="fas fa-search" /></div>
-            </div>
-        </nav>
+                <div className="right">
+                    <button className="login-btn"><i className="far fa-user" /> Login</button>
+                    <div className="vertical-divide" />
+                    <div className="cart-icon">
+                        <i className="fas fa-shopping-bag" />
+                        <div className="products-amount"><p>5</p></div>
+                    </div>
+                    <div className="search-icon"><i className="fas fa-search" /></div>
+                </div>
+            </nav>
+        </header>
     )
 }
 

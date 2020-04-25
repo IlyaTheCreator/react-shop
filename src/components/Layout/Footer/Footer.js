@@ -3,6 +3,7 @@ import './Footer.css'
 import ShopFeatures from "./ShopFeatures/ShopFeatures";
 import SubscribeInput from './SubscribeInput/SubscribeInput'
 import VeryBottom from './VeryBottom/VeryBottom'
+import GetApp from './GetApp/GetApp'
 import items from './items'
 
 const Footer = () => {
@@ -22,7 +23,8 @@ const Footer = () => {
     })
 
     return (
-        <div className="footer">
+        <footer className="footer">
+            <GetApp />
             <ShopFeatures />
             <div className="container">
                 <div className="wrapper">
@@ -32,7 +34,7 @@ const Footer = () => {
                 <div className="divider" />
                 <VeryBottom />
             </div>
-        </div>
+        </footer>
     )
 }
 

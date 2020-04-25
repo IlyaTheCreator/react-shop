@@ -21,7 +21,6 @@ const VeryBottom = () => {
                 <a href="#">FAQs</a>
                 <span>/</span>
                 <a href="#">Contact</a>
-                <span>/</span>
             </div>
         </div>
     )

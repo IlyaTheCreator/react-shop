@@ -22,7 +22,7 @@ const SubscribeInput = () => {
                     value={email}
                     onChange={inputChangeHandle}
                 />
-                <button onClick={clickHandle}>Subscribe Now</button>
+                <button onClick={clickHandle} className="email-submit-btn">Subscribe Now</button>
             </div>
         </div>
     )

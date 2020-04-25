@@ -1,0 +1,44 @@
+.homepage {
+    margin-top: 60px;
+}
+
+.banner {
+    height: 600px;
+    background: url('../../assets/images/welcome.jpg') center no-repeat;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+}
+
+.homepage .text {
+    display: grid;
+    place-content: center;
+}
+
+.homepage .text h1 {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    font-size: 5em;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+
+.homepage .text button {
+    margin: 15px auto;
+    font-size: 1em;
+    width: 150px;
+    padding: 13px 20px;
+    border: 0;
+    background: #fff;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.homepage .text button:hover {
+    color: #000;
+}
+
+.homepage .text button:focus {
+    outline: none;
+}

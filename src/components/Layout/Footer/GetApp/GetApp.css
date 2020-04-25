@@ -1,0 +1,94 @@
+.outer-wrapper {
+    background: #f2f2f2;
+    margin: 50px 0;
+    padding-top: 30px;
+}
+
+.get-app {
+    display: flex;
+    justify-content: center;
+}
+
+.get-app .col {
+    flex: 0 0 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-app .centered {
+    width: 470px;
+}
+
+.get-app .col h2 {
+    font-weight: 300;
+    width: 98%;
+    color: #000;
+    font-size: 2em;
+}
+
+.get-app .col .margined-text {
+    margin: 17px 0;
+}
+
+.get-app img {
+    flex: 0 0 35%;
+    max-height: 450px;
+}
+
+.download-btns {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.download-btns button {
+    flex: 0 0 48.5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+}
+
+.download-btns button:focus {
+    outline: none;
+}
+
+.download-btns .text {
+    flex: 0 0 75%;
+    text-align: left;
+}
+
+.download-btns .text > p {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+.download-btns .fa {
+    flex: 0 0 20%;
+    font-size: 2.2em;
+    margin-right: 5px;
+}
+
+.download-btns .cursor-text {
+    font-size: 1.05em;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.apple {
+    background: #000;
+    color: #fff;
+}
+
+.android {
+    background: #fff;
+    border: 2px solid #555;
+}
+
+.apple:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
