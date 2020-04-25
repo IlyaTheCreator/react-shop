@@ -1,0 +1,84 @@
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.for-men-appear {
+    position: absolute;
+    cursor: default;
+    top: 100%;
+    left: calc(100% - 1300px - 32px);
+    width: 1300px;
+    height: 550px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.col-sm, .editor {
+    height: 100%;
+    flex: 0 0 23%;
+}
+
+.title {
+    color: #dc3545;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.category {
+    display: block;
+    font-size: 0.87em;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 11px 5px;
+    border-radius: 7px;
+}
+
+.category > p {
+    transition: all 0.3s ease;
+}
+
+.category:hover {
+    background: rgba(0, 0, 0, 0.025);
+}
+
+.category:hover > p {
+    transform: translateX(13px);
+}
+
+.editor-image {
+    margin-top: 15px;
+    height: 80%;
+    background: url("../../../../assets/images/editor.jpg") center no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+.editor-link {
+    font-weight: lighter !important;
+    text-decoration: underline !important;
+}
+
+.for-women-appear {
+    display: flex;
+    position: absolute;
+    cursor: default;
+    top: 100%;
+    background: #fff;
+    justify-content: space-between;
+    width: 360px;
+    padding: 15px 25px;
+    opacity: 0;
+}
+
+.for-women-appear .col-sm {
+    flex: 0 0 48%;
+}
