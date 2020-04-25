@@ -16,6 +16,7 @@
     padding: 15px 25px;
     opacity: 0;
     transition: opacity 0.2s ease;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
 }
 
 .col-sm, .editor {
@@ -23,7 +24,7 @@
     flex: 0 0 23%;
 }
 
-.title {
+.for-men-appear .title, .for-women-appear .title {
     color: #dc3545;
     text-transform: uppercase;
     font-size: 0.9em;
@@ -77,6 +78,7 @@
     width: 360px;
     padding: 15px 25px;
     opacity: 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
 .for-women-appear .col-sm {
