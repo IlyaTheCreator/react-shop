@@ -17,7 +17,7 @@ const Nav = () => {
         { name: 'Home', arrow: false, type: null },
         { name: 'Men', arrow: true, type: 'for-men' },
         { name: 'Women', arrow: true, type: 'for-women' },
-        { name: 'Blog', arrow: false, type: null }
+        { name: 'Shop', arrow: false, type: null }
     ])
 
     // handling mouseOver event

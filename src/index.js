@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.querySelector('body')
+  document.getElementById('shop')
 );
 
 // If you want your app to work offline and load faster, you can change
