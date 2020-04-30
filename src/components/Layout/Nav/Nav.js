@@ -1,24 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import DrawItem from './DrawItem/DrawItem'
+import MobileAppear from "./MobileAppear/MobileAppear";
 import { menCategories, womenCategories } from "./categories";
 import './Nav.css'
 import logo from '../../../assets/images/logo.png'
 
 const Nav = () => {
-    // state for handling appearing/disappearing of men/female sections in desktop navigation
+    // state for handling mobile nav
+    const [mobileAppear, setMobileAppear] = useState(false)
+
+    // state for handing desktop nav
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [appearingItems, setAppearingItems] = useState({
         men: false,
         women: false
     })
-
-    // state for rendering desktop navigation links
     const [navItems] = useState([
         { name: 'Home', arrow: false, type: null },
         { name: 'Men', arrow: true, type: 'for-men' },
         { name: 'Women', arrow: true, type: 'for-women' },
         { name: 'Shop', arrow: false, type: null }
     ])
+
+    // handling window resize
+    const resizeHandle = () => setScreenWidth(window.innerWidth)
 
     // handling mouseOver event
     const mouseOverHandle = type => {
@@ -58,7 +64,34 @@ const Nav = () => {
         }
     }
 
-    // rendering links out of the links state
+    // handling mobile nav button click
+    const mobileNavClickHandle = () => setMobileAppear(!mobileAppear)
+
+    // handling mobile nav appearing items
+    const mobileNavAppearingHandle = type => {
+        switch(type) {
+            case 'for-men':
+                setAppearingItems({
+                    ...appearingItems,
+                    men: !appearingItems.men
+                })
+                break
+            case 'for-women':
+                setAppearingItems({
+                    ...appearingItems,
+                    women: !appearingItems.women
+                })
+                break
+            default: return
+        }
+    }
+
+    // setting an event listener for window resize
+    useEffect(() => {
+        window.addEventListener('resize', resizeHandle)
+    }, [])
+
+    // rendering links for the desktop navigation out of the links state
     const links = navItems.map((link, index) => {
         // conditionals for arrows and appearing sections
         const arrow = link.arrow ? <i className="fas fa-chevron-down" /> : null
@@ -85,25 +118,57 @@ const Nav = () => {
         )
     })
 
+    // putting button section into its own variable to use it in the condition below
+    const buttonSection = (
+        <div className="right">
+            <button className="login-btn"><i className="far fa-user" /> Login</button>
+            <div className="vertical-divide" />
+            <div className="nav-icons-wrapper">
+                <div className="cart-icon">
+                    <i className="fas fa-shopping-bag" />
+                    <div className="products-amount"><p>5</p></div>
+                </div>
+                <div className="search-icon"><i className="fas fa-search" /></div>
+            </div>
+        </div>
+    )
+
     return (
         <header>
-            <nav className="desktop-nav">
-                <div className="left">
-                    <img src={logo} alt="" className="logo"/>
-                    <ul className="links">
-                        {links}
-                    </ul>
-                </div>
-                <div className="right">
-                    <button className="login-btn"><i className="far fa-user" /> Login</button>
-                    <div className="vertical-divide" />
-                    <div className="cart-icon">
-                        <i className="fas fa-shopping-bag" />
-                        <div className="products-amount"><p>5</p></div>
-                    </div>
-                    <div className="search-icon"><i className="fas fa-search" /></div>
-                </div>
-            </nav>
+            {
+                screenWidth > 991 ? (
+                    <nav className="desktop-nav">
+                        <div className="left">
+                            <img src={logo} alt="" className="logo"/>
+                            <ul className="links">
+                                {links}
+                            </ul>
+                        </div>
+                        {buttonSection}
+                    </nav>
+                ) : (
+                    <React.Fragment>
+                        <nav className="mobile-nav">
+                            <div
+                                className="menu-button"
+                                onClick={mobileNavClickHandle}
+                            >
+                                <i className="fas fa-bars" />
+                            </div>
+                            <img src={logo} alt="" className="mobile-logo"/>
+                            {buttonSection}
+                        </nav>
+                        <MobileAppear
+                            isShown={mobileAppear}
+                            menCategories={menCategories}
+                            womenCategories={womenCategories}
+                            appearingItems={appearingItems}
+                            clicked={mobileNavAppearingHandle}
+                            navItems={navItems}
+                        />
+                    </React.Fragment>
+                )
+            }
         </header>
     )
 }

@@ -7,7 +7,7 @@
     position: absolute;
     cursor: default;
     top: 100%;
-    left: calc(100% - 1300px - 32px);
+    left: -300%;
     width: 1300px;
     height: 550px;
     background: #fff;

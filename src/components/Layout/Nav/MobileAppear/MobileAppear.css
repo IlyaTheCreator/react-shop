@@ -1,0 +1,52 @@
+.mobile-appear {
+    margin: 0 auto;
+    max-width: 700px;
+    list-style: none;
+    padding: 0 10px 15px 10px;
+}
+
+.mobile-appear-item, .mobile-appear-title, .mobile-appear-category {
+    display: block;
+    color: #000;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.mobile-appear-category {
+    font-size: 11px;
+    margin-left: 20px;
+    color: #555;
+}
+
+.mobile-appear-title {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.mobile-appear-item span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-appear-item  i {
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.mobile-appear-item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.mobile-appear-subitem{
+    color: #555;
+    font-size: 1em;
+    display: block;
+}

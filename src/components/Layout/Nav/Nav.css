@@ -1,11 +1,16 @@
+header {
+    background: #fff;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+}
+
 .desktop-nav {
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     height: 70px;
-    background: #fff;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
 }
 
 .desktop-nav .left {
@@ -23,6 +28,7 @@
 }
 
 .links li {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +68,7 @@
     background-size: 68% 110%;
 }
 
-.right {
+.desktop-nav .right {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -72,6 +78,7 @@
 .login-btn {
     font-size: 1em;
     color: #000;
+    width: 70px;
     border: 0;
     background: inherit;
     cursor: pointer;
@@ -101,6 +108,58 @@
     font-size: 0.7em;
 }
 
+.nav-icons-wrapper {
+    display: flex;
+}
+
 .search-icon, .fa-shopping-bag {
     cursor: pointer;
+    margin: 0 10px;
+}
+
+.mobile-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-button {
+    flex: 0 0 15%;
+    display: grid;
+    place-content: center;
+    font-size: 1.2em;
+}
+
+.mobile-nav .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 15%;
+}
+
+@media (max-width: 991px) {
+    .nav-icons-wrapper {
+        flex-direction: row-reverse;
+    }
+
+    .products-amount {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .mobile-logo {
+        width: 90px;
+    }
+}
+
+@media (max-width: 380px) {
+    .mobile-logo {
+        width: 70px;
+    }
 }
