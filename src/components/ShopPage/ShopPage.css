@@ -1,0 +1,22 @@
+.shop-home h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #000;
+    margin: 40px 0;
+}
+
+.shop-home {
+    padding: 10px;
+}
+
+@media (max-width: 550px) {
+    .shop-home h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 350px) {
+    .shop-home h1 {
+        font-size: 1.6em;
+    }
+}

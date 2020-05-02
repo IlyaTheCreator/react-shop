@@ -1,7 +1,8 @@
 .new-arrivals {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: space-between;
-    flex-wrap: wrap;
+    grid-gap: 15px;
 }
 
 .new-arrivals .shop-item {

@@ -1,7 +1,7 @@
 import React from 'react'
-import './PopularCategories.css'
+import './Categories.css'
 
-const PopularCategories = () =>
+const Categories = () =>
     <div className="popular-categories">
         <div className="for-him">for him</div>
         <div className="for-her">for her</div>
@@ -10,4 +10,4 @@ const PopularCategories = () =>
         <div className="sportswear">sportswear</div>
     </div>
 
-export default PopularCategories
+export default Categories

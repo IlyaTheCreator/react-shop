@@ -1,7 +1,9 @@
 .bottom {
+    padding: 0 10px;
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .bottom a {
@@ -20,12 +22,18 @@
     border-bottom: 1px dotted #000;
 }
 
-.first span {
+.first span, .second span {
     margin: 0 5px;
 }
 
 .second {
-    flex: 0 0 30%;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 660px) {
+    .first {
+        flex: 0 0 100%;
+        margin-bottom: 15px;
+    }
 }

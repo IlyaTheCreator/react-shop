@@ -9,6 +9,7 @@ import item_2 from '../../../assets/images/items/featured/2.jpg'
 import item_3 from '../../../assets/images/items/featured/3.jpg'
 import item_4 from '../../../assets/images/items/featured/4.jpg'
 import item_5 from '../../../assets/images/items/featured/5.jpg'
+import {connect} from "react-redux";
 
 const items = [
     {
@@ -94,10 +95,10 @@ const items = [
 ]
 // to be remove later end
 
-const NewArrivals = () => {
-    const content = items.map((item, index) => (
+const NewArrivals = props => {
+    const content = props.products.map((item, index) => (
             <ShopItem
-                {...item}
+                {...item.fields}
                 key={index}
             />
         )
@@ -110,4 +111,8 @@ const NewArrivals = () => {
     )
 }
 
-export default NewArrivals
+const mapStateToProps = state => ({
+    products: state.products
+})
+
+export default connect(mapStateToProps)(NewArrivals)

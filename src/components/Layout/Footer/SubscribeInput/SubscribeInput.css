@@ -48,3 +48,20 @@ input {
 .email-submit-btn:hover {
     background: rgba(0, 0, 0, 0.8);
 }
+
+@media (max-width: 1100px) {
+    .subscribe-input {
+        flex: 0 0 70%;
+        margin: 10px 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .inputField {
+        flex: 0 0 45%;
+    }
+
+    .email-submit-btn {
+        flex: 0 0 35%;
+    }
+}

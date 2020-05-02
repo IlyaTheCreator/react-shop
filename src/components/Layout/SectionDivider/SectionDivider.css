@@ -1,19 +1,13 @@
 .section-divider {
+    text-align: center;
     margin: 60px 0 35px 0;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+    background: url('../../../assets/images/categories/dots.png') repeat-x center;
 }
 
 .section-divider > p {
-    margin: 0 15px;
-    text-align: center;
+    width: 250px;
+    margin: 0 auto;
     font-size: 1.2em;
+    background: #fff;
     color: #000;
-}
-
-.section-divider .dots {
-    flex: 1 1 40%;
-    height: 10px;
-    background: url('../../../assets/images/categories/dots.png');
 }

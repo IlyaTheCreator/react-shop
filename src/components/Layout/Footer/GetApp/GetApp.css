@@ -48,8 +48,8 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    border: 0;
     border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .download-btns button:focus {
@@ -91,4 +91,64 @@
 
 .apple:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 900px) {
+    .get-app .col {
+        padding-left: 50px;
+    }
+
+    .get-app .col h2 {
+        font-size: 1.5em;
+    }
+
+    .download-btns {
+        flex-direction: column;
+        width: 230px;
+    }
+
+    .download-btns button {
+        margin: 10px 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 830px) {
+    .outer-wrapper {
+        padding: 50px 0;
+        margin: 0;
+    }
+    .get-app img {
+        display: none;
+    }
+
+    .get-app .col {
+        flex: 0 0 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .get-app .col .centered {
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .get-app .col .centered .download-btns {
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .get-app .col .centered {
+        margin: 0 20px;
+    }
+
+    .download-btns {
+        width: 100%;
+    }
+
+    .download-btns button {
+        width: 250px;
+    }
 }

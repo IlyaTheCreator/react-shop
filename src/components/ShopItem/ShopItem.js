@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import LookCloser from './LookCloser/LookCloser'
 import './ShopItem.css'
 
 const ShopItem = props => {
-    const [imageIndex, setImageIndex] = useState(0)
     const [lookCloserShow, setLookCloserShow] = useState(false)
-
-    const mouseOverHandle = () => props.images.length > 0 ? setImageIndex(1) : null
-
-    const mouseLeaveHandle = () => props.images.length > 0 ? setImageIndex(0) : null
 
     const cartClickHandle = () => alert('you item has been added to the card')
 
@@ -41,9 +36,7 @@ const ShopItem = props => {
                 {topItem}
                 <div className="image-wrapper">
                     <img
-                        onMouseOver={mouseOverHandle}
-                        onMouseLeave={mouseLeaveHandle}
-                        src={props.images[imageIndex]}
+                        src={props.images[0]}
                         alt={props.title}
                     />
 
@@ -66,9 +59,9 @@ const ShopItem = props => {
 ShopItem.propTypes = {
     images: PropTypes.array,
     title: PropTypes.string,
-    price: PropTypes.string || PropTypes.number,
+    price: PropTypes.number,
     status: PropTypes.string || PropTypes.any, // any is for null option
-    description: PropTypes.string,
+    description: PropTypes.object,
     features: PropTypes.array
 }
 
