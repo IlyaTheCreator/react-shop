@@ -1,22 +1,33 @@
-.shop-home h1 {
-    text-align: center;
-    font-size: 3em;
+.shop-page {
+    margin-top: 25px;
+}
+
+.shop-page .shop-title {
+    font-size: 2.5em;
     color: #000;
-    margin: 40px 0;
+    letter-spacing: 0;
+    line-height: 1.5;
+    text-transform: capitalize;
+    border-bottom: 1px solid #ccc;
 }
 
-.shop-home {
-    padding: 10px;
+.shop-page .content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
 }
 
-@media (max-width: 550px) {
-    .shop-home h1 {
-        font-size: 2em;
-    }
+.shop-page .content main {
+    flex: 0 0 85%;
 }
 
-@media (max-width: 350px) {
-    .shop-home h1 {
-        font-size: 1.6em;
-    }
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-content: space-between;
+    grid-gap: 15px;
+}
+
+.products-wrapper .shop-item {
+    border-bottom: none;
 }

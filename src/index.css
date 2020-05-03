@@ -9,6 +9,7 @@
 body {
     color: #555;
     font-family: 'Lato', sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), url('./assets/images/body-bg.jpg') repeat;
 }
 
 /*-breakpoint-xs: 0;*/

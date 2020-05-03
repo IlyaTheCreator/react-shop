@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import LookCloser from './LookCloser/LookCloser'
@@ -11,11 +11,13 @@ const ShopItem = props => {
 
     const lookCloserClickHandle = () => {
         document.querySelector('body').style.overflow = 'hidden'
+        document.querySelector('header').style.position = 'static'
         setLookCloserShow(true)
     }
 
     const clickAwayHandle = () => {
         document.querySelector('body').style.overflow = 'visible'
+        document.querySelector('header').style.position = 'sticky'
         setLookCloserShow(false)
     }
 

@@ -6,6 +6,7 @@ import SectionDivider from "../Layout/SectionDivider/SectionDivider";
 import Categories from "../Categories/Categories";
 import WeeklyFeatured from "./WeeklyFeatured/WeeklyFeatured";
 import NewArrivals from './NewArrivals/NewArrivals'
+import { Link } from 'react-router-dom'
 import {fetchAllProducts} from "../../store/actions/actionCreators";
 
 const HomePage = props => {
@@ -18,7 +19,7 @@ const HomePage = props => {
                 <div className="banner">
                     <div className="text">
                         <h1>new arrivals</h1>
-                        <button>shop</button>
+                        <Link className="to-shop" to="shop-home">shop</Link>
                     </div>
                 </div>
             </div>

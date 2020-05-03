@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import { NavLink } from "react-router-dom";
 import DrawItem from './DrawItem/DrawItem'
 import MobileAppear from "./MobileAppear/MobileAppear";
 import { menCategories, womenCategories } from "./categories";
@@ -17,10 +18,10 @@ const Nav = () => {
         women: false
     })
     const [navItems] = useState([
-        { name: 'Home', arrow: false, type: null },
-        { name: 'Men', arrow: true, type: 'for-men' },
-        { name: 'Women', arrow: true, type: 'for-women' },
-        { name: 'Shop', arrow: false, type: null }
+        { name: 'Home', arrow: false, type: null, link: '/' },
+        { name: 'Men', arrow: true, type: 'for-men', link: '/shop/men' },
+        { name: 'Women', arrow: true, type: 'for-women', link: '/shop/women' },
+        { name: 'Shop', arrow: false, type: null, link: '/shop-home' }
     ])
 
     // handling window resize
@@ -107,12 +108,13 @@ const Nav = () => {
             <li
                 onMouseOver={() => mouseOverHandle(link.type)}
                 onMouseLeave={() => mouseLeaveHandle(link.type)}
+                onClick={() => mouseLeaveHandle(link.type)}
                 key={index}
             >
-                <a href="/">
+                <NavLink to={link.link}>
                     {link.name}
                     {arrow}
-                </a>
+                </NavLink>
                 {appearingEl}
             </li>
         )

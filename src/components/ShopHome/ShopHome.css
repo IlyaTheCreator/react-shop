@@ -1,0 +1,54 @@
+.shop-home {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shop-home .col {
+    width: 420px;
+    height: 600px;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+}
+
+.shop-home .men {
+    background: url("../../assets/images/sections/shop/men.jpg");
+    background-size: cover;
+}
+
+.shop-home .women {
+    background: url("../../assets/images/sections/shop/women.jpg");
+    background-size: cover;
+}
+
+.shop-home h1 {
+    border: 3px solid #000;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    flex: 0 0 100%;
+}
+
+@media (max-width: 991px) {
+    .shop-home {
+        flex-direction: column;
+    }
+
+    .shop-home .col {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 485px) {
+    .shop-home .col {
+        width: 300px;
+        height: 500px;
+    }
+
+    .shop-home .col h1 {
+        font-size: 1.5em;
+    }
+}

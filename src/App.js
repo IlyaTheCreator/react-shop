@@ -2,13 +2,14 @@ import React, { Suspense, lazy } from 'react';
 import {
     BrowserRouter,
     Switch,
-    Route
+    Route,
 } from 'react-router-dom'
 
 import Layout from './components/Layout/Layout'
 import './App.css';
 
 const HomePage = lazy(() => import('./components/HomePage/HomePage'))
+const ShopHome = lazy(() => import('./components/ShopHome/ShopHome'))
 const ShopPage = lazy(() => import('./components/ShopPage/ShopPage'))
 
 const App = ()=> {
@@ -28,6 +29,14 @@ const App = ()=> {
                   <Route
                       path="/shop-home"
                       exact
+                      render={() => (
+                          <Suspense fallback={<h1>Loading...</h1>}>
+                              <ShopHome />
+                          </Suspense>
+                      )}
+                  />
+                  <Route
+                      path="/shop/:sex"
                       render={() => (
                           <Suspense fallback={<h1>Loading...</h1>}>
                               <ShopPage />
