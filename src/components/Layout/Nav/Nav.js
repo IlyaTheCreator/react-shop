@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import DrawItem from './DrawItem/DrawItem'
-import MobileAppear from "./MobileAppear/MobileAppear";
+import MobileNav from './MobileNav/MobileNav'
 import { menCategories, womenCategories } from "./categories";
 import './Nav.css'
 import logo from '../../../assets/images/logo.png'
@@ -96,6 +96,8 @@ const Nav = () => {
     const links = navItems.map((link, index) => {
         // conditionals for arrows and appearing sections
         const arrow = link.arrow ? <i className="fas fa-chevron-down" /> : null
+
+        // checking if to put an appearing element
         let appearingEl = null
 
         if (link.type === 'for-men') {
@@ -138,10 +140,14 @@ const Nav = () => {
     return (
         <header>
             {
+                // if width of a screen is greater than 991 pixels, show desktop navigation,
+                // otherwise - mobile
                 screenWidth > 991 ? (
                     <nav className="desktop-nav">
                         <div className="left">
-                            <img src={logo} alt="" className="logo"/>
+                            <Link to="/">
+                                <img src={logo} alt="" className="logo"/>
+                            </Link>
                             <ul className="links">
                                 {links}
                             </ul>
@@ -149,26 +155,17 @@ const Nav = () => {
                         {buttonSection}
                     </nav>
                 ) : (
-                    <React.Fragment>
-                        <nav className="mobile-nav">
-                            <div
-                                className="menu-button"
-                                onClick={mobileNavClickHandle}
-                            >
-                                <i className="fas fa-bars" />
-                            </div>
-                            <img src={logo} alt="" className="mobile-logo"/>
-                            {buttonSection}
-                        </nav>
-                        <MobileAppear
-                            isShown={mobileAppear}
-                            menCategories={menCategories}
-                            womenCategories={womenCategories}
-                            appearingItems={appearingItems}
-                            clicked={mobileNavAppearingHandle}
-                            navItems={navItems}
-                        />
-                    </React.Fragment>
+                    <MobileNav
+                        buttonSection={buttonSection}
+                        isShown={mobileAppear}
+                        // categories for mobile navigation are set in the MobileDrawItem component
+                        menCategories={menCategories}
+                        womenCategories={womenCategories}
+                        appearingItems={appearingItems}
+                        clicked={mobileNavAppearingHandle}
+                        mobileNavClickHandle={mobileNavClickHandle}
+                        navItems={navItems}
+                    />
                 )
             }
         </header>

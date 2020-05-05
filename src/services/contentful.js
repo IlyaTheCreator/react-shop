@@ -1,3 +1,5 @@
+// here I set and export the contentful client so I can use it to fetch my data
+
 import * as contentful from 'contentful'
 
 const client = contentful.createClient({

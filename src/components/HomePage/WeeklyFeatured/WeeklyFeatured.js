@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import './WeeklyFeatured.css'
 import Carousel from "react-elastic-carousel";
 import ShopItem from "../../ShopItem/ShopItem";
 
-const WeeklyFeatured = props => {
+const WeeklyFeatured = ({ products }) => {
+    // setting carousel breakpoints so it is responsive
     const [carouselBreakPoints] = useState([
         { width: 1, itemsToShow: 1 },
         { width: 400, itemsToShow: 2 },
@@ -14,7 +16,7 @@ const WeeklyFeatured = props => {
         { width: 991, itemsToShow: 5 },
     ])
 
-    const content = props.products.map((item, index) => (
+    const content = products.map((item, index) => (
             <ShopItem
                 {...item.fields}
                 key={index}
@@ -39,6 +41,10 @@ const WeeklyFeatured = props => {
             </Carousel>
         </div>
     )
+}
+
+WeeklyFeatured.propTypes = {
+    products: PropTypes.array
 }
 
 const mapStateToProps = state => ({

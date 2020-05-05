@@ -7,6 +7,7 @@ import GetApp from './GetApp/GetApp'
 import items from './items'
 
 const Footer = () => {
+    // setting up inner columns on links
     const cols = items.map((item, index) => {
         const title = <h4 className="title">{item.title}</h4>
 

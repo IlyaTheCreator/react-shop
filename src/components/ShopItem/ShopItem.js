@@ -5,31 +5,31 @@ import LookCloser from './LookCloser/LookCloser'
 import './ShopItem.css'
 
 const ShopItem = props => {
+    // state for managing appearing of the LookCloser component
     const [lookCloserShow, setLookCloserShow] = useState(false)
 
+    // handling clicking on the cart icon which appears when you hover over an item
     const cartClickHandle = () => alert('you item has been added to the card')
 
+    // handling clicking on the search icon which also appears when you hover over an item,
+    // setting all the necessary styles and managing the state
     const lookCloserClickHandle = () => {
         document.querySelector('body').style.overflow = 'hidden'
         document.querySelector('header').style.position = 'static'
         setLookCloserShow(true)
     }
 
+    // handling clicking on the close button of the LookCloser component
     const clickAwayHandle = () => {
         document.querySelector('body').style.overflow = 'visible'
         document.querySelector('header').style.position = 'sticky'
         setLookCloserShow(false)
     }
 
-    let topItem
-
-    if (props.status) {
-        if (props.status === 'out-of-stock') {
-            topItem = <span className="top-item out-of-stock">out of stock!</span>
-        } else {
-            topItem = <span className="top-item sale">on sale!</span>
-        }
-    }
+    // setting that little red or black text item
+    const topItem = props.status
+    ? <span className="top-item out-of-stock">out of stock!</span>
+    : <span className="top-item sale">on sale!</span>
 
     return (
         <React.Fragment>
@@ -52,7 +52,7 @@ const ShopItem = props => {
                     </div>
                 </div>
                 <h5>{props.title}</h5>
-                <p>${props.price}</p>
+                <p>${props.price} <span className="item-category"> {props.category}</span></p>
             </div>
         </React.Fragment>
     )

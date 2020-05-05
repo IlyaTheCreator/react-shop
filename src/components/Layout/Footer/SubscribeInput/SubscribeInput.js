@@ -5,6 +5,7 @@ const SubscribeInput = () => {
     const [email, setEmail] = useState('')
 
     const inputChangeHandle = e => setEmail(e.target.value)
+
     const clickHandle = () => {
         setEmail('')
         alert(`Your email  | ${email} |  has been added to the newsletter.`)

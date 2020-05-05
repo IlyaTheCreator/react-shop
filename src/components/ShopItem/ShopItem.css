@@ -27,11 +27,13 @@
 .shop-item {
     flex: 0 0 18.5%;
     border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     position: relative;
     z-index: 1;
     transition: all 0.2s ease;
     height: 300px;
+    background: #f2f2f2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .shop-item img {
@@ -48,6 +50,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     transition: color 0.2s ease;
+    padding: 2px 3px;
 }
 
 .shop-item h5:hover {
@@ -57,6 +60,14 @@
 
 .shop-item p {
     color: #000;
+    padding: 2px 3px;
+}
+
+.shop-item .item-category {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-left: 7px;
+    text-decoration: underline;
 }
 
 .image-wrapper {

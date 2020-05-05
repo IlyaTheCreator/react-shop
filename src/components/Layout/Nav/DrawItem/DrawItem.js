@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './DrawItem.css'
 
 const DrawItem = ({categories, isShown, sex}) => {
-    // rendering the drawing item cols and their contents
+    // getting the drawing item cols and its contents
     const catCols = categories.map((col, index) => {
         const content = col.map((item, indexTwo) =>
             item.role === 'title'

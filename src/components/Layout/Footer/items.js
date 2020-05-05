@@ -1,3 +1,5 @@
+// these are the content of the footer's columns (4) of links
+
 const items = [
     {
         title: 'features',

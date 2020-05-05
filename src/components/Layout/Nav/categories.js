@@ -1,3 +1,5 @@
+// these are content for navigations
+
 export const menCategories = [
     [
         { role: 'title', text: 'footwear' },

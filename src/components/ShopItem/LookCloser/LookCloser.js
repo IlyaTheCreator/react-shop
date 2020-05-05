@@ -31,10 +31,9 @@ const LookCloser = props =>
                                 <button className="control">+</button>
                             </div>
                             <button className="add-to-cart">add to cart</button>
-                        </div> {console.log(props.description)}
-                        {/*buttons end */}
-                        <div className="description">{props.description.content[0].content[0].value}
                         </div>
+                        {/*buttons end */}
+                        <div className="description">{props.description.content[0].content[0].value}</div>
                         <div className="features">
                             {
                                 props.features.map((feature, index) => (

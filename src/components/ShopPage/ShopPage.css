@@ -1,5 +1,6 @@
 .shop-page {
     margin-top: 25px;
+    padding: 10px;
 }
 
 .shop-page .shop-title {
@@ -22,12 +23,23 @@
 }
 
 .products-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: flex;
     justify-content: space-between;
-    grid-gap: 15px;
+    flex-wrap: wrap;
 }
 
 .products-wrapper .shop-item {
+    margin: 15px;
+    width: 200px;
+}
+
+.products-wrapper .shop-item {
+    margin-bottom: 15px;
     border-bottom: none;
+}
+
+@media (max-width: 991px) {
+    .shop-page .content {
+        flex-direction: column;
+    }
 }

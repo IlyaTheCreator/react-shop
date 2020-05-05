@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import './NewArrivals.css'
 import ShopItem from "../../ShopItem/ShopItem";
 
-const NewArrivals = props => {
-    const content = props.products.map((item, index) => (
+const NewArrivals = ({ products }) => {
+    const content = products.map((item, index) => (
             <ShopItem
                 {...item.fields}
                 key={index}
@@ -18,6 +19,10 @@ const NewArrivals = props => {
             {content}
         </div>
     )
+}
+
+NewArrivals.propTypes = {
+    products: PropTypes.array
 }
 
 const mapStateToProps = state => ({

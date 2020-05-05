@@ -1,9 +1,9 @@
 import React from 'react'
 import './SectionDivider.css'
 
-const SectionDivider = props =>
+const SectionDivider = ({ text }) =>
     <div className="section-divider">
-        <p>{props.text}</p>
+        <p>{text}</p>
     </div>
 
 export default SectionDivider
