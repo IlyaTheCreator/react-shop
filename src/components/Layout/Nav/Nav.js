@@ -8,7 +8,7 @@ import './Nav.css'
 import logo from '../../../assets/images/logo.png'
 
 const Nav = () => {
-    // state for handling mobile nav
+    // state for handling mobile nav 
     const [mobileAppear, setMobileAppear] = useState(false)
 
     // state for handing desktop nav
@@ -17,7 +17,8 @@ const Nav = () => {
         men: false,
         women: false
     })
-    const [navItems] = useState([
+
+    const [navItems] = useState([ // how the fukkkkk is this so coolll????!!!!!!!
         { name: 'Home', arrow: false, type: null, link: '/' },
         { name: 'Men', arrow: true, type: 'for-men', link: '/shop/men' },
         { name: 'Women', arrow: true, type: 'for-women', link: '/shop/women' },

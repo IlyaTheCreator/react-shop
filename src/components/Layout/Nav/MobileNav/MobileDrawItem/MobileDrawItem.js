@@ -10,7 +10,8 @@ const MobileDrawItem = props => {
             // setting necessary classes
             const classes = innerItem.role === 'title' ? 'mobile-appear-title' : 'mobile-appear-category'
 
-            return <a className={classes} key={index}>{innerItem.text}</a>
+            // temporarily those are paragraphs
+            return <p className={classes} key={index}>{innerItem.text}</p>
         })
     })
 
@@ -20,7 +21,8 @@ const MobileDrawItem = props => {
             // setting necessary classes
             const classes = innerItem.role === 'title' ? 'mobile-appear-title' : 'mobile-appear-category'
 
-            return <a href="#" className={classes} key={index}>{innerItem.text}</a>
+            // temporarily those are paragraphs
+            return <p href="#" className={classes} key={index}>{innerItem.text}</p>
         })
     })
 

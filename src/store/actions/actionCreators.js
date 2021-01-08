@@ -13,7 +13,6 @@ const receiveProducts = payload => ({
     payload
 })
 
-
 export const fetchProducts = (query = []) => dispatch => {
     dispatch(requestProducts())
 

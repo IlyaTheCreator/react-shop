@@ -43,9 +43,6 @@ const ShopPage = ({ match, location, history, fetchProducts, products }) => {
         if (sex !== 'men' && sex !== 'women') {
             history.push('/shop-home')
         }
-
-        // when the component is going to unmount, remove the event listener
-        return () => window.removeEventListener('resize')
     }, [sex])
 
     // setting the shop product items

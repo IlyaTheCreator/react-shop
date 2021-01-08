@@ -7,7 +7,7 @@ import logo from "../../../../assets/images/logo.png";
 import MobileDrawItem from "./MobileDrawItem/MobileDrawItem";
 
 const MobileNav = props =>
-    <React.Fragment>
+    <>
         <nav className="mobile-nav">
             <div
                 className="menu-button"
@@ -30,7 +30,7 @@ const MobileNav = props =>
             clicked={props.clicked}
             navItems={props.navItems}
         />
-    </React.Fragment>
+    </>
 
 MobileNav.propTypes = {
     isShown: PropTypes.bool,
