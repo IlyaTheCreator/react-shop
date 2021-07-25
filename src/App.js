@@ -1,57 +1,53 @@
-import React, { Suspense, lazy, useEffect } from 'react';
-import {
-    BrowserRouter,
-    Switch,
-    Route,
-} from 'react-router-dom'
+import React, { Suspense, lazy, useEffect } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Layout from './components/Layout/Layout'
-import './App.css';
+import Layout from "./components/Layout/Layout";
+import "./App.css";
 
-const HomePage = lazy(() => import('./components/HomePage/HomePage'))
-const ShopHome = lazy(() => import('./components/ShopHome/ShopHome'))
-const ShopPage = lazy(() => import('./components/ShopPage/ShopPage'))
+const HomePage = lazy(() => import("./components/HomePage/HomePage"));
+const ShopHome = lazy(() => import("./components/ShopHome/ShopHome"));
+const ShopPage = lazy(() => import("./components/ShopPage/ShopPage"));
 
-const App = ()=> {
-    useEffect(() => {
-        console.log("written in vim!!!")
-        console.log("also written in vim!!!")
-    }, [])
+const App = () => {
+  useEffect(() => {
+    console.log("written in vim!!!");
+    console.log("also written in vim!!!");
+  }, []);
 
-return ( 
+  return (
     <BrowserRouter>
       <Layout>
-          <Switch>
-    	    <Route
-    	        path="/"
-    	        exact
-    	        render={() => (
-    	        <Suspense fallback={<h1>Loading...</h1>}>
-    	            <HomePage />
-                </Suspense>
-                )}
-             />
-             <Route
-                 path="/shop-home"
-                 exact
-                 render={() => (
-                     <Suspense fallback={<h1>Loading...</h1>}>
-                         <ShopHome />
-                     </Suspense>
-                 )}
-             />
-             <Route
-                 path="/shop/:sex"
-                 render={() => (
-                     <Suspense fallback={<h1>Loading...</h1>}>
-                         <ShopPage />
-                     </Suspense>
-                 )}
-             />
-           </Switch>
-          </Layout>
-      </BrowserRouter>
-  )
-}
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <HomePage />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/shop-home"
+            exact
+            render={() => (
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <ShopHome />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/shop/:sex"
+            render={() => (
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <ShopPage />
+              </Suspense>
+            )}
+          />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
+  );
+};
 
 export default App;
